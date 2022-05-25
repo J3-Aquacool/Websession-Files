@@ -1,0 +1,121 @@
+class Admin 
+{
+	private int adminId;
+	private String emailId;
+	private String firstName;
+	private String lastName;
+	private String password;
+	public Admin() {
+		super();
+	}
+	public Admin(int adminId, String emailId, String firstName, String lastName, String password) {
+		super();
+		this.adminId = adminId;
+		this.emailId = emailId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+	}
+	public int getAdminId() {
+		return adminId;
+	}
+	public void setAdminId(int adminId) {
+		this.adminId = adminId;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@Override
+	public String toString() {
+		return "Admin [adminId=" + adminId + ", emailId=" + emailId + ", firstName=" + firstName + ", lastName="
+				+ lastName + ", password=" + password + "]";
+	}
+}
+
+interface AdminService {
+	void createAdmin(Admin admin);
+	Admin updateAdmin(Admin admin);
+	void deleteAdmin(int id);
+	//Admin searchAdmin(int id);
+	Admin[] getAdmin();
+}
+
+class AdminServiceImpl implements AdminService
+{
+	public static Admin adminArray[] = new Admin[5];
+	static int count = 0;
+	@Override
+	public void createAdmin(Admin admin) {
+		adminArray[count] = admin;
+		count++;	
+	}
+	@Override
+	public Admin updateAdmin(Admin admin) 
+	{
+		for(int i=0; i<adminArray.length; i++)
+		{
+			if(adminArray[i].getAdminId() == admin.getAdminId())
+			{
+				adminArray[i] = admin;
+				return admin;
+			}
+		}
+		return admin;
+	}
+	@Override
+	public void deleteAdmin(int adminId) 
+	{
+		//boolean flag = false;
+		for(int i=0; i<adminArray.length; i++)
+		{
+			if(adminArray[i].getAdminId() == adminId)
+			{
+				adminArray[i] = null;
+				//flag = true;
+			}
+		}
+	}
+/*	@Override
+	public Admin searchAdmin(int adminId) 
+	{
+		for(int i=0; i<adminArray.length; i++)
+		{
+			if(adminArray[i].getUserId ()== adminId)
+			{
+				return adminArray[i];
+			}
+		}
+		//throw new AdminNotFoundException();
+		return adminArray;
+	}*/
+	@Override
+	public Admin[] getAdmin() {
+		return adminArray;
+	}	
+}
+
+public class Source
+{
+    public static void main(String args[]) {}
+}

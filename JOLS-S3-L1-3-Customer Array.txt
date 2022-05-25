@@ -1,0 +1,41 @@
+import java.util.*;
+public class Source 
+{
+    
+	
+	
+	public static void main(String args[])
+	{
+	    Scanner scanner=new Scanner(System.in);
+		String customerDetails[][]=new String[5][3];
+		
+		for(int i=0;i<customerDetails.length;i++)
+		{
+			for(int j=0;j<customerDetails[i].length;j++)
+			{
+				customerDetails[i][j]=scanner.next();
+			}
+		}
+		
+		scanner.close();
+		
+		Arrays.sort(customerDetails,new Comparator<String[]>() {
+
+			@Override
+			public int compare(String[] o1, String[] o2) {
+				// TODO Auto-generated method stub
+				return Integer.parseInt(o1[0])-Integer.parseInt(o2[0]);
+			}
+		});
+		
+		for(String customer[]:customerDetails)
+		{
+			for(String det:customer)
+			{
+				System.out.println(det);
+			}
+		}
+		
+	
+    }
+}

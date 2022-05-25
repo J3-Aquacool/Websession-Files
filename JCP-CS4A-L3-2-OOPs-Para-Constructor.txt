@@ -1,0 +1,264 @@
+class Admin
+{
+	private String adminId;
+	private String email;
+	private String firstName;
+	private String lastName;
+	private String password;
+	private Address address;
+	
+	public Admin() {}
+	public Admin(String adminId, String email, String firstName, String lastName, String password, Address address) {
+		super();
+		this.adminId = adminId;
+		this.email = email;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.address = address;
+	}
+	public String getAdminId() {
+		return adminId;
+	}
+	public void setAdminId(String adminId) {
+		this.adminId = adminId;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+}
+
+class Address
+{
+	private String city;
+	private String state;
+	private int zip;
+	private String country;
+
+	public Address() {}
+	public Address(String city, String state, int zip, String country) {
+		super();
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.country = country;
+	}
+	@Override
+	public String toString() {
+		return "Address [city=" + city + ", state=" + state + ", zip=" + zip + ", country=" + country + "]";
+	}
+}
+
+class User
+{
+	private int userId;
+	private String emailId;
+	private String password;
+	private String firstName;
+	private String lastName;
+	private String city;
+	private String gender;
+	private int phoneNumber;
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public User(int userId, String emailId, String password, String firstName, String lastName, String city,
+			String gender, int phoneNumber) {
+		super();
+		this.userId = userId;
+		this.emailId = emailId;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.city = city;
+		this.gender = gender;
+		this.phoneNumber = phoneNumber;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", emailId=" + emailId + ", password=" + password + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", city=" + city + ", gender=" + gender + ", phoneNumber=" + phoneNumber
+				+ "]";
+	}
+}
+
+class Ride
+{
+	private String rideId;
+	private String fromLocation;
+	private String toLocation;
+	private String seatsLeft;
+	private String totalSeats;
+	private String startTime;
+	private String endTime;
+	private String isStared;
+	private String finished;
+	private User rideProvider;
+	
+	public Ride() {}
+	public Ride(String rideId, String fromLocation, String toLocation, String seatsLeft, String totalSeats,
+			String startTime, String endTime, String isStared, String finished, User rideProvider) {
+		super();
+		this.rideId = rideId;
+		this.fromLocation = fromLocation;
+		this.toLocation = toLocation;
+		this.seatsLeft = seatsLeft;
+		this.totalSeats = totalSeats;
+		this.startTime = startTime;
+		this.endTime = endTime;
+		this.isStared = isStared;
+		this.finished = finished;
+		this.rideProvider = rideProvider;
+	}
+	public String getRideId() {
+		return rideId;
+	}
+	public void setRideId(String rideId) {
+		this.rideId = rideId;
+	}
+	public String getFromLocation() {
+		return fromLocation;
+	}
+	public void setFromLocation(String fromLocation) {
+		this.fromLocation = fromLocation;
+	}
+	public String getToLocation() {
+		return toLocation;
+	}
+	public void setToLocation(String toLocation) {
+		this.toLocation = toLocation;
+	}
+	public String getSeatsLeft() {
+		return seatsLeft;
+	}
+	public void setSeatsLeft(String seatsLeft) {
+		this.seatsLeft = seatsLeft;
+	}
+	public String getTotalSeats() {
+		return totalSeats;
+	}
+	public void setTotalSeats(String totalSeats) {
+		this.totalSeats = totalSeats;
+	}
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
+	}
+	public String getIsStared() {
+		return isStared;
+	}
+	public void setIsStared(String isStared) {
+		this.isStared = isStared;
+	}
+	public String getFinished() {
+		return finished;
+	}
+	public void setFinished(String finished) {
+		this.finished = finished;
+	}
+	public User getRideProvider() {
+		return rideProvider;
+	}
+	public void setRideProvider(User rideProvider) {
+		this.rideProvider = rideProvider;
+	}
+	@Override
+	public String toString() {
+		return "Ride [rideId=" + rideId + ", fromLocation=" + fromLocation + ", toLocation=" + toLocation
+				+ ", seatsLeft=" + seatsLeft + ", totalSeats=" + totalSeats + ", startTime=" + startTime + ", endTime="
+				+ endTime + ", isStared=" + isStared + ", finished=" + finished + ", rideProvider=" + rideProvider
+				+ "]";
+	}
+}
+
+public class Source
+{
+    public static void main(String args[]) {}
+}
